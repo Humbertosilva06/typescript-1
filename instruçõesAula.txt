@@ -1,0 +1,93 @@
+// aula typescript 1
+
+// criar uma pastacom um novo projeto node : npm init -y (cria o package jSon)
+// instalar o typescript: nom i typescript -D
+// criar um arquivo index.ts que imprima hello world no terminal
+//para executa-lo, criar um script start pra rodar os comandos
+
+//      ORGANIZANDO O projeto
+
+1- Criar o arquivo de configuações do typescript : npx tsc --init
+2- dentro do tsconfig.json altere as chaves:
+    - target para "es6"
+    - rootDir para "./src"
+    - outdir para "./build"
+3- descomente as chaves  sourceMap, removeComments e noImplicityAny
+4- na pasta raiz   crie as pastas src e build . depois mova o arquivo ts para a pasta src 
+5- faca as mudanças necessarias no script start e execute o programa de novo.
+
+
+//              TIPANDO
+
+a função abaixo recebe um array de carros e uma marca . Ele devolve os carros dessa marca  ou o array inteiro caso a marca não seja passada 
+
+function buscarcarrosPorMarca (frota, marca){
+    if (marca === undefined){
+    return frota
+    }
+
+    return frota.filter ((carros)=>{
+        return carro.marca === marca
+    })
+}
+
+
+
+1- faca corretamente a tipagem do arquivo frota.ts que contem os dados dos carros (MARCA MDOELO E ANO)
+2- importe os dados deste arquivo para o index.ts e faça a tipagem correta da função 
+3- torne marca um parametyro opcional
+
+//          FIXAÇÃO
+EXERCICIO 1
+
+a função abaixo recebe como parametro os tres tamanhos  dos tres lados  de um truiangulo, a,b e carro
+
+function checaTriangulo(a, b, c) {
+  if ((a !== b) && (b !== c)) {
+    return 'Escaleno'
+  } else if (a === b && b === c) {
+    return 'Equilátero'
+  } else {
+    return 'Isósceles'
+  }
+}
+console.log(checaTriangulo(7, 7, 7))
+console.log(checaTriangulo(7, 7, 9))
+console.log(checaTriangulo(7, 8, 9))
+*/
+
+com essa informação , a funcao que retorna se o triangulo é equilatero isoceles ou escaleno 
+
+refatore  a função  para typescript
+
+EXERCICIO 2
+
+a função abaixo recebe um ano e retorna um booleano , indicando se o ano recebido bisexto ou nao . lembre-se que:
+    são bisextos todos os anos multiplos de 400;
+    são bisextos todos os multiplos de 4 , exceto se for multiplo de 100 as não de 400
+    nao sao bisextos todos os demais anos 
+
+com isso em mente refatore a função para ts
+
+function checaAnoBissexto(ano) {
+  const cond1 = ano % 400 === 0
+  const cond2 = (ano % 4 === 0) && (ano % 100 !== 0)
+  return cond1 || cond2
+}
+console.log(checaAnoBissexto(2022))
+console.log(checaAnoBissexto(2020))
+
+EXERCICIO 3
+
+A função abaixo pergunta à pessoa suas três cores favoritas e imprime no console um array contendo essas três cores. 
+Refatore a função para o Typescript.
+*/
+
+/* DESCOMENTE ESTA FUNÇÃO
+function imprimeTresCoresFavoritas() {
+  const cor1 = process.argv[2]
+  const cor2 = process.argv[3]
+  const cor3 = process.argv[4]
+  console.log([cor1, cor2, cor3])
+}
+imprimeTresCoresFavoritas()
