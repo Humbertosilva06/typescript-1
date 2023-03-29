@@ -1,0 +1,20 @@
+{
+  "name": "aula02typescript1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc  && node build/index.js",
+    "fix1": "tsc src/fixacao/exercicio1/index.ts && node src/fixacao/exercicio1/index.js",
+    "fix2": "tsc src/fixacao/exercicio2/index.ts && node src/fixacao/exercicio2/index.js",
+    "fix3": "tsc src/fixacao/exercicio3/index.ts && node src/fixacao/exercicio3/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.2"
+  }
+}
